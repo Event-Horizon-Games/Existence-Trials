@@ -85,6 +85,7 @@ public class BlueSquareManager : MonoBehaviour
         if(cubesLooted == cubesToLoot)
         {
             Debug.Log("All cubes have been looted");
+            FinishLevel();
         }
     }
 
