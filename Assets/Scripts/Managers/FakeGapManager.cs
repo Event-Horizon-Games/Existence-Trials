@@ -132,7 +132,7 @@ public class FakeGapManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("GlassFloorMaze");
     }
 
     public void LoadOptions()
