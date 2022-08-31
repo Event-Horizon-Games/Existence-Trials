@@ -2,7 +2,7 @@
 
 [Join Our Discord!](https://discord.com/invite/FMp2zhT)
 
-## Event Horizon Games presents:
+### Event Horizon Games presents:
 
 # Existence Trials
 
