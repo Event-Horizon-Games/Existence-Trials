@@ -6,6 +6,6 @@
 
 # Existence Trials
 
-# Made with Unity
+### Made with Unity
 
 I've made an effort to familiarize myself with some of the most common game engines available. This was a story I had written awhile ago and used Unity to make it happen. It is by no means finished and very much a work in progress, but definitely taught me a lot about using Unity for projects
