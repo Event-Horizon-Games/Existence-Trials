@@ -65,7 +65,7 @@ public class GlassFloorManager : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("VictoryScene");
     }
 
     public void LoadOptions()

@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FakeGapLevel.unity
     guid: 84dae61e1e8fba84597ee0b9d17fbdaa
+  - enabled: 1
+    path: Assets/Scenes/GlassFloorMaze.unity
+    guid: 84589d89820615945840003c76d66bbf
+  - enabled: 1
+    path: Assets/Scenes/VictoryScene.unity
+    guid: d2de34ab578902d44828f938f46febd0
   m_configObjects: {}
