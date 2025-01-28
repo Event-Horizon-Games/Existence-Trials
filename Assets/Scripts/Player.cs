@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     //Visible to inspector
     [SerializeField] private Camera playerCamera;
     [SerializeField] private CharacterController controller;
+    [SerializeField] private Animator animator;
 
     [Header("Player Attributes")]
     [SerializeField] private float walkSpeed = 7.5f;
@@ -42,6 +43,33 @@ public class Player : MonoBehaviour
         float curSpeedX = 0.0f;
         float curSpeedY = 0.0f;
 
+        //TODO i dont think this is the best place to put this
+        if (Input.GetKey(KeyCode.W))
+        {
+            // Consider player moving forward, play animation
+            animator.SetTrigger("WalkTrigger");
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            // Player moving left, play left strafe
+            animator.SetTrigger("StrafeLeftTrigger");
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            // Player moving right, play right strafe
+            animator.SetTrigger("StrafeRightTrigger");
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            // Player moving backward
+            animator.SetTrigger("BackwardTrigger");
+
+        }
+        else
+        {
+            animator.SetTrigger("IdleTrigger");
+        }
+
         if(canMove)
         {
             if(isRunning)
@@ -62,6 +90,7 @@ public class Player : MonoBehaviour
         if(Input.GetButton("Jump") && canMove && controller.isGrounded)
         {
             moveDirection.y = jumpSpeed;
+            animator.SetTrigger("JumpTrigger");
         }
         else
         {
