@@ -31,7 +31,7 @@ public class Interactable : MonoBehaviour
     {
         if(canInteract)
         {
-            FindObjectOfType<BlueSquareManager>().LootCube();
+            FindFirstObjectByType<BlueSquareManager>().LootCube();
             Destroy(this.gameObject);
         }
         else

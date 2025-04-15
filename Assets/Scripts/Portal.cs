@@ -31,7 +31,7 @@ public class Portal : MonoBehaviour
             }
             else if(SceneManager.GetActiveScene().name == "FakeGapLevel")
             {
-                gapManager.PlayerExitPortal();
+                //gapManager.PlayerExitPortal();
             }
     }
 }

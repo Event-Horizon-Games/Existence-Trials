@@ -14,6 +14,7 @@ public class MirrorManager : MonoBehaviour
 
     //Private to this class
     private bool inMirrorCollider;
+    private float timePressingButtonInMirror = 0.0f;
     private bool gamePaused = false;
     private bool inMenus = false;
     private float startTime;
@@ -63,11 +64,19 @@ public class MirrorManager : MonoBehaviour
             }
         }
 
-        float currentTime = Time.time;
-
-        if(inMirrorCollider && Input.GetKeyDown(KeyCode.Q))
+        if (inMirrorCollider && Input.GetButton("Interact"))
         {
-            Debug.Log("Pressed Q in collider.");
+            Debug.Log("Holding E for " + timePressingButtonInMirror + " seconds.");
+            timePressingButtonInMirror += Time.deltaTime;
+
+            if (timePressingButtonInMirror >= 4.0f)
+            {
+                FinishLevel();
+            }
+        }
+        else
+        {
+            timePressingButtonInMirror = 0;
         }
     }
     public void FinishLevel()

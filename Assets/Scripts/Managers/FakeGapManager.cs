@@ -43,19 +43,6 @@ public class FakeGapManager : MonoBehaviour
     {
         float currentTime = Time.time - startTime;
 
-        if(inPortal)
-        {
-            timeInPortal += Time.deltaTime;
-            
-            //Player has spent more than 5 seconds within portal bounds
-            if(timeInPortal >= 5.0f && !levelEndInProgress)
-            {
-                Debug.Log("Player spent 5 seconds within portal.");
-                levelEndInProgress = true;
-                StartCoroutine(PortalToNextLevel());
-            }
-        }
-
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(!gamePaused && !inMenus)
@@ -87,47 +74,7 @@ public class FakeGapManager : MonoBehaviour
 
     public void PlayerEnterPortal()
     {
-
-    }
-
-    public void PlayerExitPortal()
-    {
-        Debug.Log("Portal timer stopped");
-        inPortal = false;
-        timeInPortal = 0f;
-
-        audioSource.clip = clip_leavePortal;
-        audioSource.Play();
-    }
-
-    public IEnumerator PortalToNextLevel()
-    {
-        audioSource.clip = clip_success;
-        audioSource.Play();
-
-        yield return new WaitWhile(() => audioSource.isPlaying);
-
-        FinishLevel();
-
-        Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        gamePaused = true;
-        player.PauseMovement();
-    }
-
-    public void FinishLevel()
-    {
-        inGamePanel.SetActive(false);
-        winPanel.SetActive(true);
-
-        Time.timeScale = 0;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        gamePaused = true;
-        player.PauseMovement();
+        LoadNextLevel();
     }
 
     public void LoadNextLevel()
